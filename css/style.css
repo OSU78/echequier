@@ -12,3 +12,9 @@ table td {
   text-align: center;
   vertical-align: middle;
 }
+
+
+.active {
+  color: red;
+  border: 1px solid red;
+}

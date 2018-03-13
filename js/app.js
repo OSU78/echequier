@@ -47,6 +47,11 @@ var app = {
 
       // On affiche les positions de la case
       td.textContent = app.alphabet[ column ] + (8 - lineIndex);
+      // test
+      // td.className = 'trololo hyperspace';
+
+      // On écoute le clic sur chacune des cases
+      td.addEventListener('click', app.showBox);
 
       // On change la valeur de l'interrupteur
       interrupteur = !interrupteur;
@@ -57,6 +62,26 @@ var app = {
 
     // On insère le <tr> dans <table>
     app.table.appendChild( tr );
+  },
+  // Affiche une case en rouge
+  showBox: function( evt ) {
+
+    // On récupère la case où se trouve déjà
+    // la classe "active"
+    var oldTarget = document.querySelector('.active');
+
+    // On regarde si on a trouvé rouge ou pas
+    // if ( oldTarget !== null ) {
+    if ( oldTarget ) {
+
+      // On a bien une case rouge dans le document
+      // On supprime la classe "active" de la case
+      oldTarget.classList.remove( 'active' );
+    }
+
+    // On ajoute la class "active" sur la
+    // case sur laquelle on vient de cliquer
+    evt.target.classList.add( 'active' );
   }
 };
 
