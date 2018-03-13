@@ -1,6 +1,7 @@
 var app = {
   // Va contenir le tableau HTML
   table: null,
+  alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
   init: function() {
 
     // On crée le tableau
@@ -43,6 +44,9 @@ var app = {
       // On applique une couleur de fond
       if (interrupteur) td.style.backgroundColor = '#efe0d1';
       else td.style.backgroundColor = '#70433c';
+
+      // On affiche les positions de la case
+      td.textContent = app.alphabet[ column ] + (8 - lineIndex);
 
       // On change la valeur de l'interrupteur
       interrupteur = !interrupteur;
