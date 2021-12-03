@@ -72,3 +72,13 @@ createCase(4, 8, 0);
 createCase(3, 8, -1);
 createCase(2, 8, 0);
 createCase(1, 8, -1);
+
+
+var li=document.querySelectorAll("li")
+
+li.forEach((li)=>{
+    li.addEventListener("click",()=>{
+        li.classList.toggle("active")
+    })
+
+})

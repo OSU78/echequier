@@ -13,7 +13,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
+    gap: 10px;
     height: 80vh;
+}
+h1,a{
+    color: #70433c;
+    transition: .2s;
+}
+a:hover{
+    transition: .2s;
+    color: rgb(44, 185, 138);
 }
 
 li{
@@ -52,6 +62,11 @@ li{
     color: white;
 }
 
+.active{
+    transition: .2s;
+    border : solid 1px red ;
+    color: red;
+}
 #chess {
     min-width: 368px;
     max-width: 368px;
