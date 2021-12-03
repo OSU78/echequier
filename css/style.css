@@ -1,20 +1,70 @@
-table {
-  width: 400px;
-  height: 400px;
-  border: 1px solid #50312b;
-  margin: 10px auto;
+@font-face {
+    font-family: "Popins-Regular";
+    src: url("./../font/Poppins-Regular.ttf");
 }
 
-table td {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #50312b;
-  text-align: center;
-  vertical-align: middle;
+:root {
+    --case1Color: #efe0d1;
+    --case2Color: #70433c;
 }
 
+body {
+    font-family: "Popins-Regular";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
 
-.active {
-  color: red;
-  border: 1px solid red;
+li{
+    list-style-type: none;
+}
+
+.case1 {
+    user-select: none;
+    cursor: pointer;
+    transition: .2s;
+    background: var(--case1Color);
+    border : solid 2px var(--case1Color);
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.case2 {
+    user-select: none;
+    cursor: pointer;
+    border : solid 2px var(--case2Color) ;
+    transition: .2s;
+    background: var(--case2Color);
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.case1:hover ,.case2:hover{
+    transition: .2s;
+    border : solid 2px red ;
+    color: red;
+}
+.case2:hover{
+    color: white;
+}
+
+#chess {
+    min-width: 368px;
+    max-width: 368px;
+    max-height: 369px;
+    min-height: 369px;
+    border: solid 4px #50312b;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+@media (max-width:400px) {
+#chess{
+    transform: scale(0.9);
+}
 }

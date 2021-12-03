@@ -1,90 +1,74 @@
-var app = {
-  // Va contenir le tableau HTML
-  table: null,
-  alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-  init: function() {
+/**
+ * ## Objectif
+ * Construire un échiquier en JS :sunglasses:
+ * NOM : SALAMATAO OUSMANE PM2024
+ */
 
-    // On crée le tableau
-    app.createTable();
-  },
-  // Crée le tableau HTML
-  createTable: function() {
+/*Declaration de nos variable */
+let arrayLetter = ["", "H", "G", "F", "E", "D", "C", "B", "A"]
+let chess = document.getElementById("chess")
+let nbCible = 8;
 
-    // On crée le tableau HTML et on
-    // l'enregistre dans une propriété de "app"
-    app.table = document.createElement('table');
-
-    for (var line = 0; line < 8; line++) {
-
-      // On crée une ligne du tableau
-      app.createLine( line );
+/*Fonction pour crée une ligne horizontale du damier */
+function createCase(nbcible, nbCase, caseEtat) {
+    let li;
+    let previousSibling;
+    let case1 = "case1"
+    let case2 = "case2"
+    let firtCase = false
+    switch (caseEtat) {
+        case -1:
+            case1 = "case2"
+            case2 = "case1"
+            console.log('Reverse Case color');
+            break;
+        case 0:
+            case1 = "case1"
+            case2 = "case2"
+            console.log('Normal Case color');
+            break;
     }
 
-    // On affiche le <table> dans la <div> "chess"
-    var div = document.getElementById('chess');
-    // var div = document.querySelector('#chess');
 
-    div.appendChild( app.table );
-  },
+    for (let i = 1; i <= 1; i++) {
 
-  createLine: function( lineIndex ) {
+        while (nbCase >= 1) {
 
-    // On utilise des boucles pour dessiner
-    // les lignes et les colonnes du tableau
-    var tr = document.createElement('tr');
+            if (firtCase == false) {
+                li = document.createElement("li")
+                li.className = case1
+                li.innerText = `A${nbcible}`
+                chess.appendChild(li)
+                firtCase = true
+            } else if (nbCase % 2 != 0) {
+                /*On crée un élement li*/
+                li = document.createElement("li")
+                li.className = case2
+                li.innerText = `${arrayLetter[nbCase]}${nbcible}`
+                /*On rajoute notre li au parent chess*/
+                chess.appendChild(li)
 
-    // On crée un interrupteur
-    var interrupteur = (lineIndex % 2 === 0);
+            } else if (nbCase % 2 == 0) {
+                li = document.createElement("li")
+                li.className = case1
+                li.innerText = `${arrayLetter[nbCase]}${nbcible}`
 
-    for (var column = 0; column < 8; column++) {
+                chess.appendChild(li)
+            }
 
-      // On crée un <td>
-      var td = document.createElement('td');
+            nbCase--
+        }
+        nbCase = 7
+        nbcible--
 
-      // On applique une couleur de fond
-      if (interrupteur) td.style.backgroundColor = '#efe0d1';
-      else td.style.backgroundColor = '#70433c';
-
-      // On affiche les positions de la case
-      td.textContent = app.alphabet[ column ] + (8 - lineIndex);
-      // test
-      // td.className = 'trololo hyperspace';
-
-      // On écoute le clic sur chacune des cases
-      td.addEventListener('click', app.showBox);
-
-      // On change la valeur de l'interrupteur
-      interrupteur = !interrupteur;
-
-      // On ajoute le <td> dans le <tr>
-      tr.appendChild( td );
     }
 
-    // On insère le <tr> dans <table>
-    app.table.appendChild( tr );
-  },
-  // Affiche une case en rouge
-  showBox: function( evt ) {
-
-    // On récupère la case où se trouve déjà
-    // la classe "active"
-    var oldTarget = document.querySelector('.active');
-
-    // On regarde si on a trouvé rouge ou pas
-    // if ( oldTarget !== null ) {
-    if ( oldTarget ) {
-
-      // On a bien une case rouge dans le document
-      // On supprime la classe "active" de la case
-      oldTarget.classList.remove( 'active' );
-    }
-
-    // On ajoute la class "active" sur la
-    // case sur laquelle on vient de cliquer
-    evt.target.classList.add( 'active' );
-  }
-};
-
-// On crée l'écoute qui va nous prévenir
-// que la page est correctement chargée
-document.addEventListener('DOMContentLoaded', app.init);
+}
+createCase(8, 8, 0);
+createCase(7, 8, -1);
+createCase(6, 8, 0);
+createCase(5, 8, -1);
+createCase(4, 8, 0);
+createCase(3, 8, -1);
+createCase(2, 8, 0);
+createCase(1, 8, -1);

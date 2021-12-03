@@ -16,17 +16,15 @@ Construire un échiquier en JS :sunglasses:
 
 ![resultat](resultat.png)
 
-## Bonus
+> - Mettre le nom des cases à l'intérieur de chaque case : A1, A2… B1, B2… H7, H8.
+> - Rendre les cases sélectionnable. Texte en rouge et bordure de 1px autour de la case selectionnée. Ce style devra être appliquer via une classe CSS et l'utilisation de `classList` est obligatoire (voir MDN).
 
-- Mettre le nom des cases à l'intérieur de chaque case : A1, A2… B1, B2… H7, H8.
-- Rendre les cases sélectionnable. Texte en rouge et bordure de 1px autour de la case selectionnée. Ce style devra être appliquer via une classe CSS et l'utilisation de `classList` est obligatoire (voir MDN).
+![resultat-2](resultat-bonus.png)
 
-![resultat-bonus](resultat-bonus.png)
+## Helper
 
-## Whaaat ?!
-
-- https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild
-- https://developer.mozilla.org/fr/docs/Web/API/Document/createElement
-- https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
-- https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-- https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener
+> - https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild
+> - https://developer.mozilla.org/fr/docs/Web/API/Document/createElement
+> - https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
+> - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+> - https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener
